@@ -14,14 +14,25 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-        'id' => 1,
         'name' => '優しい'
     ]);
 
     DB::table('categories')->insert([
-        'id' => 2,
         'name' => '悲しい'
     ]);
+
+    DB::table('categories')->insert([
+        'name' => '私ならこうする'
+    ]);
+
+    DB::table('categories')->insert([
+        'name' => 'ヒーローの'
+    ]);
+
+
+
+
+
 
     }
 }

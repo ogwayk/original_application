@@ -15,16 +15,16 @@ class PostSeeder extends Seeder
     public function run(): void
     {
         DB::table('posts')->insert([
-            'id' => 1,
-            'body' => '命名はデータを基準に考える',
+            
+            'body' => '電車を出るときに譲ってくれる人',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
             'category_id' => 1,
             'user_id' => 1
         ]);
          DB::table('posts')->insert([
-            'id' => 2,
-             'body' => '読めるようになれば怖くない',
+            
+             'body' => '定時直前の作業依頼',
              'created_at' => new DateTime(),
              'updated_at' => new DateTime(),
              'category_id' => 2,
