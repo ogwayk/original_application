@@ -9,3 +9,11 @@ form {
 img {
     display: inline-block;
 }
+
+.liked {
+    color: pink;
+}
+
+.usermenu {
+    text-align: right;
+}

@@ -9,21 +9,22 @@ use App\Http\Controllers\CategoryController;
 //    return view('welcome');
 //});
 
-Route::get('/', [PostController::class, 'index'])->name('index')->middleware('auth');
-//しつもん　
+Route::get('/', [PostController::class, 'index'])->name('index'); //->middleware('auth');
 
-Route::get('/posts/create', [PostController::class, 'create']);
+Route::get('/posts/create', [PostController::class, 'create'])->middleware('auth');
 Route::post('/posts', [PostController::class, 'store']);
 
 //Route::get('/posts/{post}', [PostController::class ,'show']);
 
-Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->middleware('auth');
 //
 Route::put('/posts/{post}', [PostController::class, 'update']);
 
 Route::get('/categories/{category}', [CategoryController::class, 'list']);
 
 Route::delete('/posts/{post}', [PostController::class, 'delete']);
+
+Route::post('/like', [PostController::class, 'like'])->name('post.like'); //変更必要かも
 
 Route::get('/dashboard', function () {
     return view('dashboard');

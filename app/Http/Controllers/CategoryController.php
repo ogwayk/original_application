@@ -9,8 +9,8 @@ class CategoryController extends Controller
 {
     public function list(Category $category)
     {
-    return view('categories.list')->with(['posts' => $category->getByCategory($category->id),'category'=>$category->name]);
+        $categories = Category::getcategoryAll();
+
+        return view('categories.list')->with(['posts' => $category->getByCategory($category->id), 'category' => $category->name, 'categories' => $categories]);
     }
-
-
 }

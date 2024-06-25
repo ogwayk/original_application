@@ -18,7 +18,7 @@ class Category extends Model
 
     public function getByCategory(int $category_id, int $limit_count = 5)
     {
-        return Post::where('category_id', '=', $category_id)->paginate($limit_count);
+        return Post::where('category_id', '=', $category_id)->withCount('likes')->paginate($limit_count);
         //  return $this->posts()->with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
         //  $targetpost = Post::where('category_id', '=', '1')->get();
     }
