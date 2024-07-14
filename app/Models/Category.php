@@ -14,13 +14,11 @@ class Category extends Model
     {
         return $this->hasMany(Post::class);
     }
-    //リレーション：1のほうに記載する方
+    //リレーション：複数のほうに記載する方
 
     public function getByCategory(int $category_id, int $limit_count = 5)
     {
         return Post::where('category_id', '=', $category_id)->withCount('likes')->paginate($limit_count);
-        //  return $this->posts()->with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
-        //  $targetpost = Post::where('category_id', '=', '1')->get();
     }
 
     public static function getCategoryAll()

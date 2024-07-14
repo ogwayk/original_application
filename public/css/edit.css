@@ -2,28 +2,36 @@ nav {
     background-color: #080F1D;
 }
 
-.contents {
+h1 {
     margin-left: 16px;
-
-}
-
-.logo,
-.prof,
-footer,
-.post {
     color: white;
 }
 
-.posts {
-    margin-top: 16px;
+p {
+    margin-left: 16px;
+    color: white;
 }
 
+option {
+    margin-left: 16px;
+}
 
 .pencil {
     color: blue;
 }
 
-form,
+footer {
+    color: aliceblue;
+}
+
+.post {
+    color: aliceblue;
+}
+
+form {
+    display: inline-block;
+}
+
 img {
     display: inline-block;
 }
@@ -37,15 +45,23 @@ img {
 }
 
 .parent {
-
+    margin-left: 16px;
     color: aliceblue;
     width: 500px;
     padding: 5px;
     cursor: pointer;
 }
 
-.child {
+.manner {
+    margin-left: 16px;
+}
 
+.newpost {
+    margin-left: 16px;
+}
+
+.child {
+    margin-left: 16px;
     width: 500px;
     padding: 5px;
 }
@@ -61,6 +77,11 @@ ul {
     display: -webkit-flex;
     display: flex;
 }
+
+.posts {
+    margin-left: 16px;
+}
+
 
 /* 星空の背景のスタイル */
 .stars {
