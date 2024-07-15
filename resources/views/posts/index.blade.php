@@ -95,7 +95,7 @@
                         <div class='post'>
                             <h2 class='body'>
                                 <img id="preview"
-                                    src="{{ isset($post->user->profile_photo_path) ? asset('storage' . $post->user->profile_photo_path) : asset('images/user_icon.png') }}"
+                                    src="{{ isset($post->user->profile_photo_path) ? asset('images' . $post->user->profile_photo_path) : asset('images/user_icon.png') }}"
                                     alt="" class="w-16 h-16 rounded-full object-cover border-none bg-gray-200">
                                 {{ $post->body }}
 
