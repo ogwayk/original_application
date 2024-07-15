@@ -4,8 +4,6 @@ use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
-use App\Logging\Appliers\CloudTraceProcessorApplier;
-use App\Logging\Appliers\WebProcessorApplier;
 
 return [
 
@@ -56,12 +54,8 @@ return [
 
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['stderr'],
-            'ignore_exceptions' => true,
-            'tap' => [
-                CloudTraceProcessorApplier::class,
-                WebProcessorApplier::class,
-            ],
+            'channels' => explode(',', env('LOG_STACK', 'single')),
+            'ignore_exceptions' => false,
         ],
 
         'single' => [
@@ -104,7 +98,7 @@ return [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
-            'formatter' => env('LOG_STDERR_FORMATTER', JsonFormatter::class),
+            'formatter' => env('LOG_STDERR_FORMATTER'),
             'with' => [
                 'stream' => 'php://stderr',
             ],
