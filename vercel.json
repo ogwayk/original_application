@@ -10,7 +10,11 @@
     "routes": [
         {
             "src": "/public/build/(.*)",
-            "dest": "/public/"
+            "dest": "/public/build/"
+        },
+        {
+            "src": "/(css|js)/(.*)",
+            "dest": "/public/$1/$2"
         },
         {
             "src": "/resources/(.*)",
