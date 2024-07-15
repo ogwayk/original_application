@@ -34,7 +34,7 @@ class ProfileController extends Controller
 
         $path = null;
         if ($request->hasFile('picture')) {
-            $path = $request->file('picture')->store('profile-icons', 'public');
+            $path = $request->file('picture')->store('public');
             $request->user()->profile_photo_path = $path;
         }
 
