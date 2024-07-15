@@ -17,8 +17,8 @@
             "dest": "/public/$1/$2"
         },
         {
-            "src": "/resources/(.*)",
-            "dest": "/public/resources/"
+            "src": "/storage/(.*)",
+            "dest": "/storage/app/public/"
         },
         {
             "src": "/favicon/(.*)",
