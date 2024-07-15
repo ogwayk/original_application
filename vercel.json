@@ -9,8 +9,8 @@
     },
     "routes": [
         {
-            "src": "/public/(.*)",
-            "dest": "/public/build/"
+            "src": "/public/build/(.*)",
+            "dest": "/public/"
         },
         {
             "src": "/resources/(.*)",
